@@ -1,27 +1,24 @@
 public class PracticeProblem {
 
 	public static void main(String args[]) {
+		bubbleSortString(new String[] {"A", "c", "d", "B"});
 
 	}
 
-	public static void q1() {
-		//Write question 1 code here
-	}
-
-	public static void q2() {
-		//Write question 2 code here
-	}
-
-	public static void q3() {
-		//Write question 3 code here
-	}
-
-	public static void q4() {
-		//Write question 4 code here
-	}
-
-	public static void q5() {
-		//Write question 5 code here
+	public static void bubbleSortString(String[] strings){
+		boolean swap = true;
+		for (int a = 0; a < strings.length - 1 && swap; a++){
+			swap = false;
+			for (int b = 0; b < strings.length - 1 - a; b++){
+				if ((strings[b]).compareToIgnoreCase(strings[b+1]) > 0){
+					String temp = strings[b];
+					strings[b] = strings[b+1];
+					strings[b+1] = temp;
+					swap = true;
+				}
+			}
+		}
+		
 	}
 
 }
