@@ -5,23 +5,21 @@ class Notes {
 		//Bubble sort
 
 		int numArray[] = {54, 5, 8, 2, 54, 78, 1, 0, 54};
+		boolean swapped = true;
 
-		for (int j = 1; j < numArray.length; j++)  {
-			boolean sorted = true;
-			for (int i = 0; i < numArray.length - j; i++) {
-				if (numArray[i] > numArray[i + 1]) {
+		for (int i = 0; i < numArray.length - 1 && swapped; i++ ) {
+			swapped = false;
+			for (int j = 0; j < numArray.length - 1 - i; j++)  {
+				if (numArray[j] > numArray[j+1]) {
 					//swap
-					//change a boolean
-					sorted = false;
-					int temp = numArray[i];
-					numArray[i] = numArray[i + 1];
-					numArray[i + 1] = temp;
+					int temp = numArray[j];
+					numArray[j] = numArray[j + 1];
+					numArray[j + 1] = temp;
+					swapped = true;
 				}
 			}
-			if (sorted) { //stops the loop if no swaps were made
-				j = numArray.length;
-			}
 		}
+
 	
 		for (int i = 0; i < numArray.length; i++) {
 			System.out.print(numArray[i] + " ");
